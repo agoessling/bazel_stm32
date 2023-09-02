@@ -1,0 +1,40 @@
+build -c opt
+build --incompatible_enable_cc_toolchain_resolution
+build --copt="-Wall"
+build --copt="-Werror"
+build --copt="-fdiagnostics-color"
+build --copt="-fmax-errors=5"
+build --cxxopt="-std=c++17"
+
+build --host_copt=-Wall
+build --host_copt=-Werror
+build --host_copt=-fdiagnostics-color
+build --host_copt=-fmax-errors=5
+build --host_cxxopt=-std=c++17
+
+test --test_output=errors
+test --test_env=GTEST_COLOR=yes
+
+# STM32F74x config.
+build:m7 --platforms=@bazel_arm_toolchains//platforms:cortex-m7+nofp.dp-none-12.3.rel1
+build:m7 --copt="-mfloat-abi=hard"
+build:m7 --linkopt="-mfloat-abi=hard"
+
+# Startup and Newlib config.
+
+# We implement our own startup via linker script and startup.c.  Don't link in defaults which serve
+# the same purpose
+build:m7 --linkopt="-nostartfiles"
+
+# We want nano.specs to select the paired down version of libc.  We specifically don't use
+# nosys.specs so that we are forced to implement any stubs (such as _sbrk) that are used by Newlib
+# instead of pulling in default implementations.
+build:m7 --copt="-specs=nano.specs"
+build:m7 --linkopt="-specs=nano.specs"
+
+# Leave symbols in ELF for debugging.
+build:m7 --copt="-g"
+
+# Disable exceptions and runtime type information.
+build:m7 --copt="-fno-exceptions"
+build:m7 --cxxopt="-fno-rtti"
