@@ -63,118 +63,113 @@ void Reset_Handler(void) {
   }
 }
 
-static void DefaultHandler(void) {
-  while (true) {
-  }
-}
-
-// Create weak alias to DefaultHandler for all interrupts.
-__attribute__((weak, alias("DefaultHandler"))) void NMI_Handler(void);
-__attribute__((weak, alias("DefaultHandler"))) void HardFault_Handler(void);
-__attribute__((weak, alias("DefaultHandler"))) void MemManage_Handler(void);
-__attribute__((weak, alias("DefaultHandler"))) void BusFault_Handler(void);
-__attribute__((weak, alias("DefaultHandler"))) void UsageFault_Handler(void);
-__attribute__((weak, alias("DefaultHandler"))) void SVC_Handler(void);
-__attribute__((weak, alias("DefaultHandler"))) void DebugMon_Handler(void);
-__attribute__((weak, alias("DefaultHandler"))) void PendSV_Handler(void);
-__attribute__((weak, alias("DefaultHandler"))) void SysTick_Handler(void);
-__attribute__((weak, alias("DefaultHandler"))) void WWDG_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void PVD_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void TAMP_STAMP_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void RTC_WKUP_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void FLASH_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void RCC_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void EXTI0_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void EXTI1_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void EXTI2_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void EXTI3_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void EXTI4_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void DMA1_Stream0_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void DMA1_Stream1_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void DMA1_Stream2_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void DMA1_Stream3_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void DMA1_Stream4_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void DMA1_Stream5_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void DMA1_Stream6_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void ADC_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void CAN1_TX_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void CAN1_RX0_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void CAN1_RX1_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void CAN1_SCE_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void EXTI9_5_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void TIM1_BRK_TIM9_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void TIM1_UP_TIM10_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void TIM1_TRG_COM_TIM11_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void TIM1_CC_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void TIM2_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void TIM3_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void TIM4_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void I2C1_EV_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void I2C1_ER_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void I2C2_EV_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void I2C2_ER_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void SPI1_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void SPI2_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void USART1_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void USART2_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void USART3_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void EXTI15_10_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void RTC_Alarm_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void OTG_FS_WKUP_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void TIM8_BRK_TIM12_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void TIM8_UP_TIM13_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void TIM8_TRG_COM_TIM14_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void TIM8_CC_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void DMA1_Stream7_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void FMC_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void SDMMC1_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void TIM5_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void SPI3_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void UART4_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void UART5_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void TIM6_DAC_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void TIM7_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void DMA2_Stream0_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void DMA2_Stream1_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void DMA2_Stream2_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void DMA2_Stream3_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void DMA2_Stream4_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void ETH_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void ETH_WKUP_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void CAN2_TX_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void CAN2_RX0_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void CAN2_RX1_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void CAN2_SCE_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void OTG_FS_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void DMA2_Stream5_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void DMA2_Stream6_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void DMA2_Stream7_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void USART6_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void I2C3_EV_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void I2C3_ER_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void OTG_HS_EP1_OUT_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void OTG_HS_EP1_IN_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void OTG_HS_WKUP_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void OTG_HS_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void DCMI_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void RNG_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void FPU_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void UART7_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void UART8_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void SPI4_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void SPI5_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void SPI6_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void SAI1_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void LTDC_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void LTDC_ER_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void DMA2D_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void SAI2_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void QUADSPI_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void LPTIM1_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void CEC_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void I2C4_EV_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void I2C4_ER_IRQHandler(void);
-__attribute__((weak, alias("DefaultHandler"))) void SPDIF_RX_IRQHandler(void);
+// Create weak alias to trap for all interrupts.
+__attribute__((weak)) void NMI_Handler(void) { while(true) {} }
+__attribute__((weak)) void HardFault_Handler(void) { while(true) {} }
+__attribute__((weak)) void MemManage_Handler(void) { while(true) {} }
+__attribute__((weak)) void BusFault_Handler(void) { while(true) {} }
+__attribute__((weak)) void UsageFault_Handler(void) { while(true) {} }
+__attribute__((weak)) void SVC_Handler(void) { while(true) {} }
+__attribute__((weak)) void DebugMon_Handler(void) { while(true) {} }
+__attribute__((weak)) void PendSV_Handler(void) { while(true) {} }
+__attribute__((weak)) void SysTick_Handler(void) { while(true) {} }
+__attribute__((weak)) void WWDG_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void PVD_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void TAMP_STAMP_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void RTC_WKUP_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void FLASH_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void RCC_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void EXTI0_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void EXTI1_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void EXTI2_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void EXTI3_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void EXTI4_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void DMA1_Stream0_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void DMA1_Stream1_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void DMA1_Stream2_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void DMA1_Stream3_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void DMA1_Stream4_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void DMA1_Stream5_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void DMA1_Stream6_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void ADC_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void CAN1_TX_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void CAN1_RX0_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void CAN1_RX1_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void CAN1_SCE_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void EXTI9_5_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void TIM1_BRK_TIM9_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void TIM1_UP_TIM10_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void TIM1_TRG_COM_TIM11_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void TIM1_CC_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void TIM2_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void TIM3_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void TIM4_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void I2C1_EV_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void I2C1_ER_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void I2C2_EV_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void I2C2_ER_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void SPI1_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void SPI2_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void USART1_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void USART2_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void USART3_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void EXTI15_10_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void RTC_Alarm_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void OTG_FS_WKUP_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void TIM8_BRK_TIM12_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void TIM8_UP_TIM13_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void TIM8_TRG_COM_TIM14_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void TIM8_CC_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void DMA1_Stream7_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void FMC_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void SDMMC1_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void TIM5_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void SPI3_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void UART4_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void UART5_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void TIM6_DAC_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void TIM7_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void DMA2_Stream0_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void DMA2_Stream1_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void DMA2_Stream2_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void DMA2_Stream3_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void DMA2_Stream4_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void ETH_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void ETH_WKUP_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void CAN2_TX_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void CAN2_RX0_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void CAN2_RX1_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void CAN2_SCE_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void OTG_FS_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void DMA2_Stream5_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void DMA2_Stream6_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void DMA2_Stream7_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void USART6_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void I2C3_EV_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void I2C3_ER_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void OTG_HS_EP1_OUT_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void OTG_HS_EP1_IN_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void OTG_HS_WKUP_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void OTG_HS_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void DCMI_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void RNG_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void FPU_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void UART7_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void UART8_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void SPI4_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void SPI5_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void SPI6_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void SAI1_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void LTDC_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void LTDC_ER_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void DMA2D_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void SAI2_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void QUADSPI_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void LPTIM1_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void CEC_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void I2C4_EV_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void I2C4_ER_IRQHandler(void) { while(true) {} }
+__attribute__((weak)) void SPDIF_RX_IRQHandler(void) { while(true) {} }
 
 // clang-format off
 __attribute__((section(".isr_vector"))) void (* const isr_vectors[])(void) = {
