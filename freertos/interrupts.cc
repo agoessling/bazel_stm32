@@ -8,7 +8,7 @@
 // Handler pointers are stored in interrupt vector in startup.c, hence the C linkage.
 extern "C" {
 void SysTick_Handler(void);
-void xPortSysTickHandler(void); // FreeRTOS SysTick handler.
+void xPortSysTickHandler(void);  // FreeRTOS SysTick handler.
 }
 
 // Handle SysTick manually so that both HAL and FreeRTOS handlers can be called.

@@ -37,8 +37,8 @@ cc_library(
 
 freertos_library(
     name = "freertos",
-    port = "gcc_cortex_m7",
     freertos_config_lib = ":freertos_conf",
+    port = "gcc_cortex_m7",
     visibility = ["//visibility:private"],
 )
 

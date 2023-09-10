@@ -13,7 +13,7 @@ cc_binary(
         # Disable linker warning about load segment being RWX.  This occurs because .init_array and
         # .fini_array input sections are emitted as RWX but are stored in flash (RX).
         "-Wl,--no-warn-rwx-segments",
-        "-lstdc++", # remove when toolchain is updated.
+        "-lstdc++",  # remove when toolchain is updated.
     ],
     target_compatible_with = [
         "@bazel_arm_toolchains//platforms/cpu:cortex-m7+nofp.dp",

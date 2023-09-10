@@ -4,6 +4,8 @@
 #include <stdint.h>
 extern uint32_t SystemCoreClock;
 
+// clang-format off
+
 // Alias ISR handler names from port
 // NOTE: xPortSysTickHandler is called manually from existing SysTick handler.
 #define xPortPendSVHandler                      PendSV_Handler
@@ -101,3 +103,5 @@ extern uint32_t SystemCoreClock;
 #define INCLUDE_xTaskResumeFromISR              1
 
 #endif /* FREERTOS_CONFIG_H */
+
+// clang-format on

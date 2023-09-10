@@ -30,8 +30,8 @@ http_archive(
 # bazel_arm_toolchains
 http_archive(
     name = "bazel_arm_toolchains",
-    strip_prefix = "bazel_arm_toolchains-0.1.1",
     sha256 = "9b097099d1818a4a6a629918a7f6fd672a45ef8c32109cfe3375e97ee5087d86",
+    strip_prefix = "bazel_arm_toolchains-0.1.1",
     url = "https://github.com/agoessling/bazel_arm_toolchains/archive/v0.1.1.zip",
 )
 

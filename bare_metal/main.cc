@@ -14,9 +14,7 @@ static std::atomic<bool> g_flag = false;
 
 class StaticConstructorTest {
  public:
-  StaticConstructorTest() {
-    g_flag = true;
-  }
+  StaticConstructorTest() { g_flag = true; }
 };
 
 static StaticConstructorTest g_static_object;

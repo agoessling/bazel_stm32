@@ -7,5 +7,5 @@ if [[ -n $(git ls-files --other --exclude-standard) ||
 fi
 
 bazel run //:format_bazel.fix &&
-bazel run //:format_python.fix &&
+# bazel run //:format_python.fix && No python currently.
 bazel run //:format_cc.fix

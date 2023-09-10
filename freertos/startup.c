@@ -11,12 +11,12 @@ extern uint32_t _sdata;  // Start of .data section.
 extern uint32_t _edata;  // End of .data section.
 extern uint32_t _sbss;  // Start of .bss section.
 extern uint32_t _ebss;  // End of .bss section.
-void (* __preinit_array_start)(void); // Start of preinit function array.
-void (* __preinit_array_end)(void); // End of preinit function array.
-void (* __init_array_start)(void); // Start of preinit function array.
-void (* __init_array_end)(void); // End of preinit function array.
+void (*__preinit_array_start)(void);  // Start of preinit function array.
+void (*__preinit_array_end)(void);  // End of preinit function array.
+void (*__init_array_start)(void);  // Start of preinit function array.
+void (*__init_array_end)(void);  // End of preinit function array.
 
-int main(void); // Application main
+int main(void);  // Application main
 
 void Reset_Handler(void) {
   uint32_t *src;
@@ -36,7 +36,7 @@ void Reset_Handler(void) {
   }
 
   // Turn on FPU.
-  SCB->CPACR |= (0x0F << 20); // Enable full access to CP10 and CP11 coprocessors.
+  SCB->CPACR |= (0x0F << 20);  // Enable full access to CP10 and CP11 coprocessors.
   __DSB();
   __ISB();
 
@@ -62,6 +62,8 @@ void Reset_Handler(void) {
   while (true) {
   }
 }
+
+// clang-format off
 
 // Create weak alias to trap for all interrupts.
 __attribute__((weak)) void NMI_Handler(void) { while(true) {} }
@@ -171,7 +173,6 @@ __attribute__((weak)) void I2C4_EV_IRQHandler(void) { while(true) {} }
 __attribute__((weak)) void I2C4_ER_IRQHandler(void) { while(true) {} }
 __attribute__((weak)) void SPDIF_RX_IRQHandler(void) { while(true) {} }
 
-// clang-format off
 __attribute__((section(".isr_vector"))) void (* const isr_vectors[])(void) = {
   (void (* const)(void))&_estack,
   Reset_Handler,

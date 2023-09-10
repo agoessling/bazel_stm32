@@ -36,9 +36,9 @@ def freertos_library(name, port, freertos_config_lib, heap = None, **kwargs):
     individual object file.  Hence the need to include the HAL sources in the binary's srcs.
     """
     if heap == None:
-      heap_srcs = []
+        heap_srcs = []
     else:
-      heap_srcs = ["@freertos//:{}".format(heap)]
+        heap_srcs = ["@freertos//:{}".format(heap)]
 
     native.cc_library(
         name = name + "_include",
