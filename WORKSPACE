@@ -30,11 +30,20 @@ http_archive(
 # bazel_arm_toolchains
 http_archive(
     name = "bazel_arm_toolchains",
-    strip_prefix = "bazel_arm_toolchains-0.1.0",
-    sha256 = "1f5eaaf066787c01e63f673efa67cc07a9dd0b4bdfc9c6b7efe6aeec9c32415c",
-    url = "https://github.com/agoessling/bazel_arm_toolchains/archive/v0.1.0.zip",
+    strip_prefix = "bazel_arm_toolchains-0.1.1",
+    sha256 = "9b097099d1818a4a6a629918a7f6fd672a45ef8c32109cfe3375e97ee5087d86",
+    url = "https://github.com/agoessling/bazel_arm_toolchains/archive/v0.1.1.zip",
 )
 
 load("@bazel_arm_toolchains//toolchains:toolchains.bzl", "all_toolchain_deps")
 
 all_toolchain_deps()
+
+# freertos
+http_archive(
+    name = "freertos",
+    build_file = "//third_party:freertos.BUILD",
+    sha256 = "376037b763ae88543974c7c48f0febefa18bcd868e9a4e6aebaf7c9d3df31021",
+    strip_prefix = "FreeRTOSv202212.01",
+    url = "https://github.com/FreeRTOS/FreeRTOS/releases/download/202212.01/FreeRTOSv202212.01.zip",
+)

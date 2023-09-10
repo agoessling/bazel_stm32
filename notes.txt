@@ -1,0 +1,13 @@
+systick handler
+vApplicationGetIdleTaskMemory
+vApplicationGetTimerTaskMemory
+configASSERT
+
+If you are using an STM32 with the STM32 driver library then ensure all the priority bits are
+assigned to be preempt priority bits by calling NVIC_PriorityGroupConfig( NVIC_PriorityGroup_4 );
+before the RTOS is started.
+
+Cortex-M interrupts default to having a priority value of zero. Zero is the highest possible
+priority value. Therefore, never leave the priority of an interrupt that uses the interrupt safe
+RTOS API at its default value.
+
