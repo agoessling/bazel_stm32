@@ -8,7 +8,6 @@ cc_binary(
         "main.cc",
         "startup.c",
         ":freertos_source",
-        ":hal_source",
     ],
     linkopts = [
         "-T $(execpath :stm32f746nghx.ld)",
@@ -23,7 +22,7 @@ cc_binary(
     visibility = ["//visibility:public"],
     deps = [
         ":freertos_include",
-        ":hal_include",
+        ":hal",
         ":stm32f746nghx.ld",
     ],
 )
@@ -54,6 +53,5 @@ hal_library(
     device = "STM32F746xx",
     hal_config_lib = ":hal_conf",
     hse_value = 25000000,
-    msp_file = "stm32f7xx_hal_msp.c",
     visibility = ["//visibility:private"],
 )

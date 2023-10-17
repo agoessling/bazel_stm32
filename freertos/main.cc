@@ -27,6 +27,9 @@ static StaticConstructorTest g_static_object;
 int main(void) {
   SCB_EnableDCache();
 
+  __HAL_RCC_PWR_CLK_ENABLE();
+  __HAL_RCC_SYSCFG_CLK_ENABLE();
+
   // NOTE: Hal_Init sets NVIC priority group to 4 (all bits used for priority).  This is required by
   // FreeRTOS.
   HAL_Init();

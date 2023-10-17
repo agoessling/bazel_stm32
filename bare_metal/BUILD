@@ -6,14 +6,12 @@ cc_binary(
         "interrupts.cc",
         "main.cc",
         "startup.c",
-        ":hal_source",
     ],
     linkopts = [
         "-T $(execpath :stm32f746nghx.ld)",
         # Disable linker warning about load segment being RWX.  This occurs because .init_array and
         # .fini_array input sections are emitted as RWX but are stored in flash (RX).
         "-Wl,--no-warn-rwx-segments",
-        "-lstdc++",  # remove when toolchain is updated.
     ],
     target_compatible_with = [
         "@bazel_arm_toolchains//platforms/cpu:cortex-m7+nofp.dp",
@@ -21,7 +19,7 @@ cc_binary(
     ],
     visibility = ["//visibility:public"],
     deps = [
-        ":hal_include",
+        ":hal",
         ":stm32f746nghx.ld",
     ],
 )
@@ -38,6 +36,5 @@ hal_library(
     device = "STM32F746xx",
     hal_config_lib = ":hal_conf",
     hse_value = 25000000,
-    msp_file = "stm32f7xx_hal_msp.c",
     visibility = ["//visibility:private"],
 )
